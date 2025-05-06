@@ -31,9 +31,7 @@ Verify that total = sum(sub totals)
 
 test.describe('User should be able to see the correct computation for added item on his/her Cart @smoke', () => {
   test.beforeEach(async ({ browser }) => {
-    const context = await browser.newContext({
-      // viewport: { width: 390, height: 844 },
-    })
+    const context = await browser.newContext({})
     await context.clearCookies()
     page = await context.newPage()
 

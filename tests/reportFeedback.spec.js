@@ -20,9 +20,7 @@ Validate errors are gone
 
 test.describe('User to validate that the message error will be gone after populating the mandatory fields @smoke', () => {
   test.beforeEach(async ({ browser }) => {
-    const context = await browser.newContext({
-      // viewport: { width: 390, height: 844 },
-    })
+    const context = await browser.newContext({})
     await context.clearCookies()
     page = await context.newPage()
 

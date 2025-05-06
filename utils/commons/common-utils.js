@@ -54,7 +54,6 @@ class CommonUtils {
   async highlight(locator, flag) {
     try {
       if (flag == true) {
-        // await locator.evaluate((element) => (element.style.border = '3px solid red'))
         await locator.evaluate((element) => (element.style.border = '3px solid green'))
       } else {
         await locator.evaluate((element) => (element.style.border = '0px'))
