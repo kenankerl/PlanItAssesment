@@ -1,6 +1,5 @@
-const { test, expect } = require('@playwright/test')
+const { test } = require('@playwright/test')
 const { ENV } = require('../utils/setup/env')
-const url = require('../utils/setup/urls.json')
 const { Components } = require('../utils/modules/component-pageObject')
 const { ReportFeedback } = require('../utils/modules/reportFeedback-pageObject')
 const { CommonUtils } = require('../utils/commons/common-utils')
@@ -8,14 +7,12 @@ const UserInfo = require('../test-data/UserInfo.json')
 let page, envUtil, dateToday
 
 /** 
-
 Test case 1:
 From the home page go to contact page
 Click submit button
 Verify error messages
 Populate mandatory fields
 Validate errors are gone
-
 */
 
 test.describe('User to validate that the message error will be gone after populating the mandatory fields @smoke', () => {
@@ -65,12 +62,11 @@ test.describe('User to validate that the message error will be gone after popula
   })
 
   /** 
-
-Test case 2:
-1. From the home page go to contact page
-2. Populate mandatory fields
-3. Click submit button
-4. Validate successful submission message
+  Test case 2:
+  1. From the home page go to contact page
+  2. Populate mandatory fields
+  3. Click submit button
+  4. Validate successful submission message
 */
 
   test('User should be able to succesfully submit a message', async () => {

@@ -1,6 +1,5 @@
 const { expect } = require('@playwright/test')
 const moment = require('moment-timezone')
-const { ENV } = require('../setup/env')
 
 class CommonUtils {
   constructor(page) {
@@ -27,6 +26,7 @@ class CommonUtils {
   }
 
   async assertElement(elements) {
+    //allows you to check if the element is visible
     for (let i = 0; i < elements.length; i++) {
       await expect(this.page.locator(elements[i]), `Error: The element ${elements[i]} was not visible.`).toBeVisible()
       try {
@@ -42,6 +42,7 @@ class CommonUtils {
   }
 
   async assertElementVisibility(elements, visibility) {
+    //assert locator visibility can be set as true or false
     for (let i = 0; i < elements.length; i++) {
       if (visibility == true) {
         await this.assertElement([elements[i]])
@@ -52,6 +53,7 @@ class CommonUtils {
   }
 
   async highlight(locator, flag) {
+    //highlight the target element
     try {
       if (flag == true) {
         await locator.evaluate((element) => (element.style.border = '3px solid green'))

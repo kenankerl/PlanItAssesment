@@ -1,15 +1,6 @@
-const { expect } = require('@playwright/test')
-const playwright = require('@playwright/test')
-const { ENV } = require('../setup/env')
-const { CommonUtils } = require('../commons/common-utils')
-
-const envUtil = new ENV()
-
 class ReportFeedback {
   constructor(page) {
     this.page = page
-    this.commonUtils = new CommonUtils(this.page)
-
     this.txtForeName = "//input[@id='forename']"
     this.txtSurname = "//input[@id='surname']"
     this.txtEmailAdd = "//input[@id='email']"
@@ -18,17 +9,14 @@ class ReportFeedback {
     this.btnSubmit = `//a[normalize-space()='Submit']`
 
     //validation
-
     this.errorlbForenameRequired = `//span[@id='forename-err']`
     this.errorlbEmailRequired = `//span[@id='email-err']`
     this.errorlbMessageRequired = `//span[@id='message-err']`
 
     //animation
-
     this.lblSendingFeedback = `//h1[normalize-space()='Sending Feedback']`
 
     //successsFeedback
-
     this.lblSuccessFeedback = `//div[@class='alert alert-success']`
   }
 

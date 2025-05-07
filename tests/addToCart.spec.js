@@ -1,13 +1,10 @@
-const { test, expect } = require('@playwright/test')
+const { test } = require('@playwright/test')
 const { ENV } = require('../utils/setup/env')
-const url = require('../utils/setup/urls.json')
 const { Components } = require('../utils/modules/component-pageObject')
-const { ReportFeedback } = require('../utils/modules/reportFeedback-pageObject')
-const { ShopItems } = require('../utils/modules/Shop-pageObject')
-
+const { ShopItems } = require('../utils/modules/shop-pageObject')
 const { CommonUtils } = require('../utils/commons/common-utils')
-const Items = require('../test-data/Items.json')
 const { Carts } = require('../utils/modules/cart-pageObject')
+const Items = require('../test-data/Items.json')
 
 let page, envUtil, dateToday
 
@@ -15,21 +12,24 @@ let StuffedFrogUnit = '2'
 let FluffyBunnyUnit = '5'
 let ValentineBearUnit = '3'
 
-let stuffFrogSubtotal
-let fullBunnySubtotal
-let valentineBearSubtotal
 /** 
-
 Test case 3:
 Buy 2 Stuffed Frog, 5 Fluffy Bunny, 3 Valentine Bear
 Go to the cart page
 Verify the subtotal for each product is correct
 Verify the price for each product
 Verify that total = sum(sub totals)
-
 */
 
 test.describe('User should be able to see the correct computation for added item on his/her Cart @smoke', () => {
+  let stuffFrogSubtotal
+  let fullBunnySubtotal
+  let valentineBearSubtotal
+
+  let StuffedFrogUnit = '2'
+  let FluffyBunnyUnit = '5'
+  let ValentineBearUnit = '3'
+
   test.beforeEach(async ({ browser }) => {
     const context = await browser.newContext({})
     await context.clearCookies()
