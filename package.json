@@ -4,7 +4,7 @@
   "description": "CMA UI Automation Testing Build 02092024",
   "scripts": {
     "dev:smoke": "cross-env test_env=sit npx playwright test --workers 1 --headed --grep @smoke --retries 3",
-    "headless_sit:smoke": "cross-env test_env=sit npx playwright test --workers 1 --grep @smoke --retries 3"
+    "headless_dev:smoke": "cross-env test_env=sit npx playwright test --workers 1 --grep @smoke --retries 3"
   },
   "keywords": [],
   "author": "",
