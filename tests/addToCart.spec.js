@@ -8,11 +8,7 @@ const Items = require('../test-data/Items.json')
 
 let page, envUtil, dateToday
 
-let StuffedFrogUnit = '2'
-let FluffyBunnyUnit = '5'
-let ValentineBearUnit = '3'
-
-/** 
+/**
 Test case 3:
 Buy 2 Stuffed Frog, 5 Fluffy Bunny, 3 Valentine Bear
 Go to the cart page
